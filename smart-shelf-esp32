@@ -1,14 +1,11 @@
 esphome:
-  name: project-template
-  friendly_name: Project Template
-  # Automatically add the mac address to the name
-  # so you can use a single firmware for all devices
-  name_add_mac_suffix: true
+    name: smart-shelf
+    friendly_name: smart-shelf
 
 esp32:
-  board: esp32-s3-devkitc-1
-  framework:
-    type: esp-idf
+    board: wemos_d1_mini32
+    framework:
+        type: arduino
 
 # To be able to get logs from the device via serial and api.
 logger:
@@ -23,6 +20,8 @@ ota:
 wifi:
   # Set up a wifi access point using the device name above
   ap:
+    ssid: "Smart-Shelf Fallback Hotspot"
+    password: "123456789"
 
 # In combination with the `ap` this allows the user
 # to provision wifi credentials to the device.

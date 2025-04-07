@@ -22,9 +22,7 @@ jobs:
       matrix:
         #### Modify below here to match your project ####
         file:
-          - project-template-esp32
-          - project-template-esp32-c3
-          - project-template-esp32-s3
+          - smart-shelf-esp32
         #### Modify above here to match your project ####
 
         esphome-version:
@@ -39,8 +37,8 @@ jobs:
         with:
           yaml-file: ${{ matrix.file }}.yaml
           version: ${{ matrix.esphome-version }}
-      - name: ESPHome ${{ matrix.esphome-version }} Factory
-        uses: esphome/build-action@v6.0.0
-        with:
-          yaml-file: ${{ matrix.file }}.factory.yaml
-          version: ${{ matrix.esphome-version }}
+      # - name: ESPHome ${{ matrix.esphome-version }} Factory
+      #   uses: esphome/build-action@v6.0.0
+      #   with:
+      #     yaml-file: ${{ matrix.file }}.factory.yaml
+      #     version: ${{ matrix.esphome-version }}
