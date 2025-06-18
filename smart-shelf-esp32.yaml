@@ -3,9 +3,9 @@ esphome:
   friendly_name: smart-shelf
 
 esp32:
-    board: wemos_d1_mini32
-    framework:
-        type: arduino
+  board: wemos_d1_mini32
+  framework:
+    type: arduino
 
 # To be able to get logs from the device via serial and api.
 logger:
@@ -26,3 +26,20 @@ wifi:
 # In combination with the `ap` this allows the user
 # to provision wifi credentials to the device.
 captive_portal:
+
+switch:
+  - platform: gpio
+    name: "Switch0"
+    pin: 26
+  - platform: gpio
+    name: "Switch1"
+    pin: 18
+  - platform: gpio
+    name: "Switch2"
+    pin: 19
+  - platform: gpio
+    name: "Switch3"
+    pin: 23
+  - platform: gpio
+    name: "Switch4"
+    pin: 5
